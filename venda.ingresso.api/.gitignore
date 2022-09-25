@@ -32,4 +32,4 @@ build/
 ### VS Code ###
 .vscode/
 
-/venda.ingresso.api/src/main/resources/application.properties
+venda.ingresso.api/src/main/resources/application.properties
