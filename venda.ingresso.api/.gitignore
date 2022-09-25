@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+
+\venda.ingresso.api\src\main\resources\application.properties
