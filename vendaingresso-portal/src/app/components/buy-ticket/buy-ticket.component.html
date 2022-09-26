@@ -1,0 +1,93 @@
+<mat-stepper #stepper class ="example-container">
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Dados Pessoais</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>Nome</mat-label>
+          <input matInput placeholder="Nome Completo" formControlName="nameForm">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>RG</mat-label>
+          <input matInput placeholder="RG" formControlName="rgForm" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Data de Nascimento</mat-label>
+          <input matInput placeholder="Data de Nascimento" formControlName="dtNascForm" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" formControlName="emailForm" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Ir para o pagameto</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <p>Valor do Ingreso:</p>
+      <p>R$ 123,45</p>
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Pagamento</ng-template>
+          <mat-form-field appearance="fill">
+            <mat-label>Forma de Pagamento</mat-label>
+            <mat-select [(value)]="formaPagamento">
+              <mat-option value="cc">Cartão de Crédito</mat-option>
+              <mat-option value="px">Pix</mat-option>
+              <mat-option value="bl">Boleto</mat-option>
+            </mat-select>
+          </mat-form-field>
+        <div *ngIf="formaPagamento === 'cc'">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Número do Cartão</mat-label>
+            <input matInput disabled placeholder="">            
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Nome do Titular</mat-label>
+            <input matInput disabled placeholder="">            
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Código de Segurança</mat-label>
+            <input matInput disabled placeholder="">            
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Data de Validade</mat-label>
+            <input matInput disabled placeholder="">            
+          </mat-form-field>
+        </div>
+        <div *ngIf="formaPagamento === 'px'">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Pix</mat-card-title>
+              <mat-card-subtitle>Leia o QRCode para realizar o pagameto</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src='https://chart.googleapis.com/chart?cht=qr&chl=QR%20code%20placeholder&chs=180x180&choe=UTF-8&chld=L|2' alt=''>
+            <mat-card-content>
+              <p>Pix Copia e Cola</p>
+              <p>
+                456457568679789br.com.pix09a9c9ghq7cke78au40-ei38d-wkdied67aehhpe63rkmhj0-iasuymprh909689573908679458unsnmfi
+                rgnmskfklgm8944di4959nasdf9PLACEHOLDERPIXCOPIAECOLA-kr9rngir8rjkvjdCfjf-vFjf8
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div *ngIf="formaPagamento === 'bl'">
+          <p>O Boleto foi enviado ao email cadastrado e o pedido será concluído quando o pagamento for processado</p>
+        </div>
+        <mat-hint align="start">
+          <br><strong>Este é um ambiente de demonstração, portanto as informações dessa etapa não podem ser preenchidas</strong> </mat-hint>
+        <div>
+          <button mat-button matStepperPrevious>Dados Pessoais</button>
+          <button mat-button matStepperNext>Resumo</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Resumo</ng-template>
+      <p>Resumo da compra</p>
+      <div>
+        <button mat-button matStepperPrevious>Pagamento</button>
+        <button mat-button (click)="stepper.reset()">Limpar</button>
+      </div>
+    </mat-step>
+  </mat-stepper>

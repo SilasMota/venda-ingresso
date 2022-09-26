@@ -1,0 +1,11 @@
+.event-list{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1{
+    display: block;
+    margin-left: 10px;
+    margin-right: auto;
+}

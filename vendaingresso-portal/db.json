@@ -1,0 +1,32 @@
+{
+    "list-events": [
+        {
+            "id": 1,
+            "name": "Show 1",
+            "date": "25/10/2022",
+            "vacancy": 15,
+            "price": 20
+        },
+        {
+            "id": 2,
+            "name": "Show 2",
+            "date": "25/10/2022",
+            "vacancy": 0,
+            "price": 30
+        },
+        {
+            "id": 3,
+            "name": "Palestra",
+            "date": "25/10/2022",
+            "vacancy": 166,
+            "price": 13
+        },
+        {
+            "id": 4,
+            "name": "Evento de Arte",
+            "date": "25/10/2022",
+            "vacancy": 300,
+            "price": 100
+        }
+    ]
+}

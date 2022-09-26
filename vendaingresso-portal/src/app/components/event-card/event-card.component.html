@@ -1,0 +1,12 @@
+<mat-card class="event-card">
+    <mat-card-title>{{event.name}}</mat-card-title>
+    <mat-card-subtitle>{{event.date}}</mat-card-subtitle>
+    <mat-card-content>R$ {{event.price}}</mat-card-content>
+    <mat-card-content *ngIf="event.vacancy !== 0; else soldOff">Ingressos disponíveis: {{event.vacancy}}</mat-card-content>
+    <ng-template #soldOff>
+        <mat-card-content style="color: red">ESGOTADO</mat-card-content>
+    </ng-template>
+    <mat-card-actions>
+        <button mat-button routerLink="/retirar-ticket" *ngIf="event.vacancy !== 0">Retirar Ingresso</button>
+    </mat-card-actions>
+</mat-card>
