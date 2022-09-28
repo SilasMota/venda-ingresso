@@ -7,6 +7,6 @@
         <mat-card-content style="color: red">ESGOTADO</mat-card-content>
     </ng-template>
     <mat-card-actions>
-        <button mat-button routerLink="/retirar-ticket" *ngIf="event.vacancy !== 0">Retirar Ingresso</button>
+        <button mat-button routerLink="/retirar-ticket/{{event.id}}" *ngIf="event.vacancy !== 0">Retirar Ingresso</button>
     </mat-card-actions>
 </mat-card>

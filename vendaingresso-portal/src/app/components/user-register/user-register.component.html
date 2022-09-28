@@ -1,0 +1,27 @@
+<form [formGroup]="formGroup">
+    <mat-form-field appearance="fill">
+        <mat-label>Usuário</mat-label>
+        <input matInput placeholder="Usuário" formControlName="loginForm" [(ngModel)]="user.login" name="loginForm" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Tipo</mat-label>
+        <mat-select formControlName="typeForm" [(ngModel)]="user.type" name="loginForm" required>
+          <mat-option value="A">Administrador</mat-option>
+          <mat-option value="V">Vendedor</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" [(ngModel)]="user.password" name="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Esconder senha'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+    </mat-form-field>
+    <br>
+    <div>
+        <button mat-button (click)="registerUser()">Cadastrar</button>
+    </div>
+</form>

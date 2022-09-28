@@ -1,32 +1,113 @@
 {
-    "list-events": [
-        {
-            "id": 1,
-            "name": "Show 1",
-            "date": "25/10/2022",
-            "vacancy": 15,
-            "price": 20
-        },
-        {
-            "id": 2,
-            "name": "Show 2",
-            "date": "25/10/2022",
-            "vacancy": 0,
-            "price": 30
-        },
-        {
-            "id": 3,
-            "name": "Palestra",
-            "date": "25/10/2022",
-            "vacancy": 166,
-            "price": 13
-        },
-        {
-            "id": 4,
-            "name": "Evento de Arte",
-            "date": "25/10/2022",
-            "vacancy": 300,
-            "price": 100
-        }
-    ]
+  "list-events": [
+    {
+      "id": 1,
+      "name": "Show 1",
+      "date": "25/10/2022",
+      "vacancy": 15,
+      "price": 20
+    },
+    {
+      "id": 2,
+      "name": "Show 2",
+      "date": "25/10/2022",
+      "vacancy": 0,
+      "price": 30
+    },
+    {
+      "id": 3,
+      "name": "Palestra",
+      "date": "25/10/2022",
+      "vacancy": 166,
+      "price": 13
+    },
+    {
+      "id": 4,
+      "name": "Evento de Arte",
+      "date": "25/10/2022",
+      "vacancy": 300,
+      "price": 100
+    }
+  ],
+  "login": [
+    {
+      "id": 1,
+      "login": "admin",
+      "password": "admin123",
+      "type": "A"
+    },
+    {
+      "id": 2,
+      "login": null,
+      "password": null,
+      "type": null
+    },
+    {
+      "id": 3,
+      "login": "teste",
+      "password": "123",
+      "type": "V"
+    },
+    {
+      "id": 4,
+      "login": "teste",
+      "password": "123",
+      "type": "V"
+    },
+    {
+      "id": 5,
+      "login": "teste",
+      "password": "123",
+      "type": "V"
+    },
+    {
+      "id": 6,
+      "login": "teste",
+      "password": "123",
+      "type": "V"
+    },
+    {
+      "id": 7,
+      "login": "teste",
+      "password": "123",
+      "type": "V"
+    },
+    {
+      "id": 8,
+      "login": "teste",
+      "password": "123",
+      "type": "V"
+    },
+    {
+      "id": 9,
+      "login": "teste",
+      "password": "123",
+      "type": "V"
+    },
+    {
+      "id": 10,
+      "login": "teste",
+      "password": "123",
+      "type": "A"
+    }
+  ],
+  "tickets": [
+    {
+      "id": 1,
+      "event": {
+        "id": 1,
+        "name": "Show 1",
+        "date": "25/10/2022",
+        "vacancy": 15,
+        "price": 20
+      },
+      "bearer": {
+        "id": 1,
+        "email": "teste@teste",
+        "rg": "MG-123",
+        "name": "teste",
+        "date": "25/10/2022"
+      }
+    }
+  ]
 }

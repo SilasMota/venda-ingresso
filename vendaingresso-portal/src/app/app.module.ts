@@ -20,7 +20,17 @@ import { BuyTicketComponent } from './components/buy-ticket/buy-ticket.component
 import { MatStepperModule } from '@angular/material/stepper';
 import { HttpClientModule } from '@angular/common/http'
 import { MatDatepickerModule } from '@angular/material/datepicker';
-
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatMenuModule} from '@angular/material/menu';
+import { LoginComponent } from './components/login/login.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { UserRegisterComponent } from './components/user-register/user-register.component';
+import { UserInfoComponent } from './components/user-info/user-info.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { UserRegiserSuccesComponent } from './components/user-register/user-regiser-succes/user-regiser-succes.component';
+import { SearchTicketComponent } from './components/search-ticket/search-ticket.component';
+import { TicketCardComponent } from './components/ticket-card/ticket-card.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +38,14 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     ToolBarComponent,
     EventCardComponent,
     EventListComponent,
-    BuyTicketComponent
+    BuyTicketComponent,
+    LoginComponent,
+    HomepageComponent,
+    UserRegisterComponent,
+    UserInfoComponent,
+    UserRegiserSuccesComponent,
+    SearchTicketComponent,
+    TicketCardComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +62,11 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatListModule,
     MatStepperModule,
     HttpClientModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSidenavModule,
+    MatMenuModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

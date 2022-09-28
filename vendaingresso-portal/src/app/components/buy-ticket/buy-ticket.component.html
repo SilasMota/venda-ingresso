@@ -1,38 +1,41 @@
 <mat-stepper #stepper class ="example-container">
-    <mat-step [stepControl]="firstFormGroup">
+    <mat-step [stepControl]="firstFormGroup" [editable]="true">
       <form [formGroup]="firstFormGroup">
         <ng-template matStepLabel>Dados Pessoais</ng-template>
         <mat-form-field appearance="fill">
           <mat-label>Nome</mat-label>
-          <input matInput placeholder="Nome Completo" formControlName="nameForm">
+          <input matInput placeholder="Nome Completo" formControlName="nameForm" [(ngModel)]="bearer.name" name="bearerName" required>
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>RG</mat-label>
-          <input matInput placeholder="RG" formControlName="rgForm" required>
+          <input matInput placeholder="RG" formControlName="rgForm" [(ngModel)]="bearer.rg" name="bearerRg" required >
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Data de Nascimento</mat-label>
-          <input matInput placeholder="Data de Nascimento" formControlName="dtNascForm" required>
+          <input matInput [matDatepicker]="picker" formControlName="dtNascForm" [(ngModel)]="bearer.date" name="bearerDate" required>
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Email</mat-label>
-          <input matInput placeholder="Email" formControlName="emailForm" required>
+          <input matInput placeholder="Email" formControlName="emailForm" [(ngModel)]="bearer.email" name="bearerEmail" required>
         </mat-form-field>
         <div>
           <button mat-button matStepperNext>Ir para o pagameto</button>
         </div>
       </form>
     </mat-step>
-    <mat-step [stepControl]="secondFormGroup">
+    <mat-step [stepControl]="secondFormGroup" [editable]="false">
       <p>Valor do Ingreso:</p>
-      <p>R$ 123,45</p>
+      <p>R$ {{event.price}}</p>
       <form [formGroup]="secondFormGroup">
         <ng-template matStepLabel>Pagamento</ng-template>
           <mat-form-field appearance="fill">
             <mat-label>Forma de Pagamento</mat-label>
             <mat-select [(value)]="formaPagamento">
-              <mat-option value="cc">Cartão de Crédito</mat-option>
               <mat-option value="px">Pix</mat-option>
+              <mat-option value="cc">Cartão de Crédito</mat-option>
               <mat-option value="bl">Boleto</mat-option>
             </mat-select>
           </mat-form-field>
@@ -82,12 +85,18 @@
         </div>
       </form>
     </mat-step>
-    <mat-step>
+    <mat-step [editable]="false">
       <ng-template matStepLabel>Resumo</ng-template>
       <p>Resumo da compra</p>
+      <p>Evento : {{event.name}}</p>
+      <p>Valor: R$ {{event.price}}</p>
+      <p>Data: {{event.date}}</p>
+      <p>Portador</p>
+      <p>Nome: {{bearer.name}}</p>
+      <p>Documento: {{bearer.rg}}</p>
+      <p>Data de Nascimento: {{bearer.date | date:"dd/MM/yyyy"}}</p>
       <div>
-        <button mat-button matStepperPrevious>Pagamento</button>
-        <button mat-button (click)="stepper.reset()">Limpar</button>
+        <button mat-button>Imprimir</button>
       </div>
     </mat-step>
   </mat-stepper>

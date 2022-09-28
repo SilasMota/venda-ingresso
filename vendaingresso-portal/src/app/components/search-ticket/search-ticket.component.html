@@ -1,0 +1,15 @@
+<mat-list class="event-list">
+    <div>
+        <h1>Ingresso</h1>
+    </div>
+    <form class="example-form" [formGroup]="formGroup">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Buscar</mat-label>
+          <input matInput placeholder="Buscar Ingresso pelo RG" formControlName="rgForm" [(ngModel)]="rg" name="rg">          
+        </mat-form-field>
+        <button mat-button (click)="searchTickets()">search</button>
+      </form>
+    <div *ngFor='let ticket of tickets'>
+        <app-ticket-card [ticket]=ticket></app-ticket-card>
+    </div>
+</mat-list>
