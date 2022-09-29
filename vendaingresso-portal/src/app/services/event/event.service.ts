@@ -8,8 +8,8 @@ import { Event } from '../../interfaces/Event';
 })
 export class EventService {
   
-  private apiUrl = "http://localhost:3000/list-events";
-
+  private apiUrlstatic = "http://localhost:3000/list-events";
+  private apiUrl = "http://localhost:8080/api/v1/events";
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Event[]> {

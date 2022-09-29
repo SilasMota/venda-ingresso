@@ -18,7 +18,6 @@ export class UserRegisterComponent implements OnInit {
   });
   hide = true;
   user:User = {
-    id:null,
     login:null,
     password:null,
     type:null

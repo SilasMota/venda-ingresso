@@ -8,10 +8,12 @@ import { User } from 'src/app/interfaces/User';
   providedIn: 'root'
 })
 export class LoginService {
-  private apiUrl = "http://localhost:3000/login";
+  private apiUrlstatic = "http://localhost:3000/login";
+  private apiUrl = "http://localhost:8080/api/v1/login";
   constructor(private http: HttpClient) { }
 
   login(user: User):Observable<User[]> {
+    console.log(`${this.apiUrl}/?login=${user.login}&password=${user.password}`);
     return this.http.get<User[]>(`${this.apiUrl}/?login=${user.login}&password=${user.password}`);
   }
 

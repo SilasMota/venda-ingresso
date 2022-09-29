@@ -22,7 +22,7 @@
           <input matInput placeholder="Email" formControlName="emailForm" [(ngModel)]="bearer.email" name="bearerEmail" required>
         </mat-form-field>
         <div>
-          <button mat-button matStepperNext>Ir para o pagameto</button>
+          <button mat-button matStepperNext (click)="submitBearer()">Ir para o pagameto</button>
         </div>
       </form>
     </mat-step>
@@ -80,8 +80,7 @@
         <mat-hint align="start">
           <br><strong>Este é um ambiente de demonstração, portanto as informações dessa etapa não podem ser preenchidas</strong> </mat-hint>
         <div>
-          <button mat-button matStepperPrevious>Dados Pessoais</button>
-          <button mat-button matStepperNext>Resumo</button>
+          <button mat-button matStepperNext (click)="saveTicket()">Realizar Pagamento</button>
         </div>
       </form>
     </mat-step>

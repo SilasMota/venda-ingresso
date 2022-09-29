@@ -16,7 +16,6 @@ export class LoginComponent implements OnInit {
   });
   hide = true;
   user:User = {
-    id:null,
     login:null,
     password:null,
     type:null
@@ -30,8 +29,8 @@ export class LoginComponent implements OnInit {
   login(){
     this.loginService.login(this.user).subscribe((user) => (this.response = user));
     this.user = this.response[0];
-    if(this.user.id){        
-        this.router.navigate([`/list/${this.user.id}`]);
+    if(this.user.login){        
+        this.router.navigate([`/list/${this.user.login}`]);
     }
   }
 

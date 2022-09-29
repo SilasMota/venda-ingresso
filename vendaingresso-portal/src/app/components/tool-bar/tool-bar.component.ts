@@ -13,7 +13,6 @@ import { LoginService } from 'src/app/services/login/login.service';
 
 export class ToolBarComponent implements OnInit {
   user: User = {
-    id: null,
     login: null,
     password: null,
     type: null
@@ -26,10 +25,10 @@ export class ToolBarComponent implements OnInit {
 
   isLogged() {
     if (this.router.url.startsWith('/list')) {
-      this.user.id = Number(this.route.snapshot.paramMap.get("user"));
+      this.user.login = String(this.route.snapshot.paramMap.get("user"));
     } else if (this.router.url === '/') {
-      this.user.id = null;
-    } else if(this.user.id = null){
+      this.user.login = null;
+    } else if(this.user.login = null){
       this.router.navigate([``]);
     }
     return this.router.url !== '/';

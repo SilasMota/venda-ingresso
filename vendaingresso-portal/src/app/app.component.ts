@@ -18,7 +18,7 @@ export class AppComponent {
 
   isLogged():boolean{
     if(this.user){
-      if(this.user.id){
+      if(this.user.login){
         return true
       }
     }

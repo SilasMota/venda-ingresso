@@ -7,7 +7,9 @@ import { Ticket } from '../interfaces/Ticket';
   providedIn: 'root'
 })
 export class TicketService {
-  private apiUrl = "http://localhost:3000/tickets";
+  
+  private apiUrl = "http://localhost:8080/api/v1/tickets";
+  private apiUrlstatic = "http://localhost:3000/tickets";
 
   constructor(private http: HttpClient) { }
 
@@ -16,6 +18,10 @@ export class TicketService {
   }
 
   getTicket(rg: string):Observable<Ticket[]> {
-    return this.http.get<Ticket[]>(`${this.apiUrl}/?rg=${rg}`);
+    return this.http.get<Ticket[]>(`${this.apiUrl}/${rg}`);
+  }
+
+  createTicket(ticket: Ticket):Observable<Ticket>{
+    return this.http.post<Ticket>(`${this.apiUrl}`,ticket);
   }
 }
